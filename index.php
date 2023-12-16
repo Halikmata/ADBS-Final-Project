@@ -17,10 +17,18 @@ $conversations = new Conversations($db);
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js">
     </script>
+    <style>
+        h2 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <!-- Include the header -->
     <?php include('header.html'); ?>
+    <div class="content">
+        <h2><strong>SHARED A.I GENERATED SOLUTIONS PLATFORM</strong></h2>
+    </div>
     <?php include('navbar.php'); ?>
 
 
