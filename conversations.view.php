@@ -112,17 +112,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </script>
 
         <!-- Form to enter password -->
-        <form method="post">
-            <label for="password">Password:</label>
+        <form method="post" style="background-color: #34a853; padding: 40px; box-shadow: 0 0 0px rgba(0, 0, 0, 0.1); width: 500px; border: none;">
+            <!-- <label for="password">Password:</label> -->
+            <label for="toggleVisibility" style="color: white">Password:</label>
             <input type="password" id="password" name="password" required>
-            
             <!-- Checkbox to toggle password visibility -->
-            <label for="toggleVisibility">
+            <label for="toggleVisibility" style="color: white">
                 <input type="checkbox" id="toggleVisibility" onchange="togglePasswordVisibility()">
                 Show Password
             </label>
             
-            <button type="submit" class="button-link">View Private Conversations</button>
+            <button type="submit" class="button-link">SUBMIT</button>
         </form>
 
         <?php
