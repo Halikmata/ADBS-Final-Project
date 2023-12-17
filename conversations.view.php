@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"]; // Get the password entered by the user
 
     // Check if the password is correct (you may want to replace 'your_password' with the actual password)
-    if ($password == '12345678') {
+    if ($password == 'admin123') {
         // Redirect to the private conversations page
         header("Location: conversations_private.view.php");
         exit();
