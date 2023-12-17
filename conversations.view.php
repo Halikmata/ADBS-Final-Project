@@ -132,10 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         ?>
     </div>
-    
-    <!-- Include the header -->
-    <?php include('footer.html'); ?>
-
     <p></p>
 </body>
+<?php include('footer.html'); ?>
 </html>

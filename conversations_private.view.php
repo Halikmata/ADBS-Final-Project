@@ -84,12 +84,7 @@ $conversations = new Conversations($db);
     <a class="button-link" href="conversations.view.php">BACK</a> <!-- I moved it upwards -->
 
         </div>
-        
-        <!-- Include the header -->
-  
-    <?php include('footer.html'); ?>
-
-
     <p></p>
 </body>
+<?php include('footer.html'); ?>
 </html>

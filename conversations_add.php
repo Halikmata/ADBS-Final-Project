@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="content">
     <h1>Add conversation details</h1>
+    <a class="button-link" href="conversations.view.php">BACK</a>
     <form action="" method="post" class="centered-form">
         <label for="ai_used">ID of A.I used:</label>
         <input type="text" name="ai_used" id="ai_used" required>
@@ -59,7 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Add to records">
     </form>
     </div>
-    
-    <?php include('footer.html'); ?>
 </body>
+<?php include('footer.html'); ?>
 </html>

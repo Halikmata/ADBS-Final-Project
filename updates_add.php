@@ -38,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="content">
     <h1>Record New Conversation Update</h1>
+    <a class="button-link" href="updates.view.php">BACK</a>
     <form action="" method="post" class="centered-form">
         <label for="conversation_id">Conversation ID</label>
         <input type="text" name="conversation_id" id="conversation_id" required>

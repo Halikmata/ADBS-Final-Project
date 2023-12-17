@@ -55,6 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="content">
     <h2>Edit Conversation Details</h2>
+    <a class="button-link" href="conversations.view.php">BACK</a>
     <form action="" method="post">
         <input type="hidden" name="id" value="<?php echo $conversations_Data['id']; ?>">
         
@@ -80,6 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Update">
     </form>
     </div>
-    <?php include('footer.html'); ?>
 </body>
+<?php include('footer.html'); ?>
 </html>

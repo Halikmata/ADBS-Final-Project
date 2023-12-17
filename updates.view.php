@@ -30,7 +30,7 @@ $updates = new Updates($db);
                 <th>Conversation Updated</th>
                 <th>Updated By</th>
                 <th>Updated On</th>
-                <th>Updates</th>
+                <th>Updates Implemented</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -79,12 +79,7 @@ $updates = new Updates($db);
         
 
         </div>
-        
-        <!-- Include the header -->
-  
-    <?php include('footer.html'); ?>
-
-
     <p></p>
 </body>
+<?php include('footer.html'); ?>
 </html>

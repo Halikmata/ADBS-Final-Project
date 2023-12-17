@@ -53,6 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="content">
     <h2>Edit Update Details</h2>
+    <a class="button-link" href="updates.view.php">BACK</a>
     <form action="" method="post">
         <input type="hidden" name="id" value="<?php echo $updates_Data['id']; ?>">
         
