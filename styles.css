@@ -41,7 +41,7 @@
 /* Body */
 body {
     font-family: Arial, sans-serif;
-    background-color: #95D5B2; /* Background color using the provided hex code */
+    background-color: #34a853; /* Background color using the provided hex code */
     color: #333; /* Text color */
     margin: 0;
     padding: 0;
@@ -186,7 +186,7 @@ header {
 .button-link {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #74C69D; /* Button background color */
+    background-color: #74C69D;  /*Button background color */
     color: #fff; /* Button text color */
     text-decoration: none;
     border: none;
