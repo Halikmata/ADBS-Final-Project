@@ -8,9 +8,9 @@
             <li class="dropdown">
                 <a href="#" class="dropbtn">A.I Companions</a>
                 <div class="dropdown-content">
-                    <a href="https://chat.openai.com/">ChatGPT</a>
-                    <a href="https://bard.google.com/chat">Bard</a>
-                    <a href="https://you.com/">You</a>
+                    <a href="https://chat.openai.com/" target="_blank">ChatGPT</a>
+                    <a href="https://bard.google.com/chat" target="_blank">Bard</a>
+                    <a href="https://you.com/" target="_blank">You</a>
                 </div>
             </li>
         </ul>
