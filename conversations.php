@@ -135,7 +135,7 @@ class Conversations {
                     INNER JOIN employees
                     ON created_by = employees.idemployees
                     WHERE access_level <> 3
-                    ORDER BY id ASC;
+                    ORDER BY id ASC
                     LIMIT :startIndex, :resultsPerPage";
     
             $stmt = $this->db->getConnection()->prepare($sql);
@@ -181,7 +181,7 @@ class Conversations {
                     INNER JOIN employees
                     ON created_by = employees.idemployees
                     WHERE access_level = 3
-                    ORDER BY id ASC;
+                    ORDER BY id ASC
                     LIMIT :startIndex, :resultsPerPage";
     
             $stmt = $this->db->getConnection()->prepare($sql);
