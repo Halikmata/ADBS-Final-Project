@@ -39,6 +39,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>Life made easier</h2>
         <a class="button-link" href="conversations_add.php">Add Convo</a>
 
+        <div style="float: right; margin-right: 10px;">
+            <li class="dropdown">
+                    <a href="#" class="button-link">CHARTS</a>
+                    <div class="dropdown-content">
+                        <a href="includes/charts/charts1.php" target="_blank">1. Charts1</a>
+                        <a href="includes/charts/charts2.php" target="_blank">2. Charts2</a>
+                        <a href="includes/charts/charts3.php" target="_blank">3. Charts3</a>
+                    </div>
+                </li>
+        </div>
+
         <table class="orange-theme">
             <thead>
                 <tr>
@@ -68,12 +79,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <tr>
                     
                     <td><?php echo $result['id']; ?></td>
-                    <td><?php echo $result['ai_used']; ?></td>
-                    <td><?php echo $result['conversation_name']; ?></td>
-                    <td><?php echo $result['access_level']; ?></td>
-                    <td><?php echo $result['created_by']; ?></td>
-                    <td><?php echo $result['created_on']; ?></td>
-                    <td><?php echo $result['description']; ?></td>
+                    <td><?php echo $result['A.I Used']; ?></td>
+                    <td><?php echo $result['Conversation Name']; ?></td>
+                    <td><?php echo $result['Access Level']; ?></td>
+                    <td><?php echo $result['Created By']; ?></td>
+                    <td><?php echo $result['Created On']; ?></td>
+                    <td><?php echo $result['Description']; ?></td>
                     <td>
                         <a href="conversations_edit.php?id=<?php echo $result['id']; ?>">Edit</a>
                         |

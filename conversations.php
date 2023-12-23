@@ -126,9 +126,16 @@ class Conversations {
     // }
     public function displayPage($startIndex, $resultsPerPage) {
         try {
-            $sql = "SELECT * FROM ai_conversations 
+            $sql = "SELECT ai_conversations.id, artificial_intelligence_used.name AS 'A.I Used', conversation_name AS 'Conversation Name', access_level.level AS 'Access Level', concat(employees.first_name, ' ', employees.middle_name, ' ', employees.last_name) AS 'Created By', created_on AS 'Created On', description AS Description 
+                    FROM ai_conversations
+                    INNER JOIN artificial_intelligence_used
+                    ON ai_conversations.ai_used = artificial_intelligence_used.id
+                    INNER JOIN access_level
+                    ON ai_conversations.access_level = access_level.id
+                    INNER JOIN employees
+                    ON created_by = employees.idemployees
                     WHERE access_level <> 3
-                    ORDER BY id ASC 
+                    ORDER BY id ASC;
                     LIMIT :startIndex, :resultsPerPage";
     
             $stmt = $this->db->getConnection()->prepare($sql);
