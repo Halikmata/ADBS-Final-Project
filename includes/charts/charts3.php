@@ -96,13 +96,13 @@ if ($openCountResult) {
                 title: {
                     text: "Conversations by Access Levels"
                 },
-                subtitles: [{
-                    text: "Click on Any Segment to Drilldown",
-                    backgroundColor: "#2eacd1",
-                    fontSize: 16,
-                    fontColor: "white",
-                    padding: 5
-                }],
+                // subtitles: [{
+                //     text: "Click on Any Segment to Drilldown",
+                //     backgroundColor: "#2eacd1",
+                //     fontSize: 16,
+                //     fontColor: "white",
+                //     padding: 5
+                // }],
                 legend: {
                     fontFamily: "calibri",
                     fontSize: 14,
