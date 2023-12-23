@@ -52,12 +52,12 @@ $conversations = new Conversations($db);
             <tr>
                 
                 <td><?php echo $result['id']; ?></td>
-                <td><?php echo $result['ai_used']; ?></td>
-                <td><?php echo $result['conversation_name']; ?></td>
-                <td><?php echo $result['access_level']; ?></td>
-                <td><?php echo $result['created_by']; ?></td>
-                <td><?php echo $result['created_on']; ?></td>
-                <td><?php echo $result['description']; ?></td>
+                <td><?php echo $result['A.I Used']; ?></td>
+                <td><?php echo $result['Conversation Name']; ?></td>
+                <td><?php echo $result['Access Level']; ?></td>
+                <td><?php echo $result['Created By']; ?></td>
+                <td><?php echo $result['Created On']; ?></td>
+                <td><?php echo $result['Description']; ?></td>
                 <td>
                     <a href="conversations_edit.php?id=<?php echo $result['id']; ?>">Edit</a>
                     |

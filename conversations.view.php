@@ -77,7 +77,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 foreach ($results as $result) {
                 ?>
                 <tr>
-                    
                     <td><?php echo $result['id']; ?></td>
                     <td><?php echo $result['A.I Used']; ?></td>
                     <td><?php echo $result['Conversation Name']; ?></td>

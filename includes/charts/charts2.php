@@ -15,7 +15,7 @@ $resultSet = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // Transform the data for chart rendering
 $dataPoints = array();
 foreach ($resultSet as $row) {
-    $aiUsedLabel = getAiUsedLabel($row['ai_used']); // Assuming you have a function to get labels
+    $aiUsedLabel = getAiUsedLabel($row['ai_used']);
     $dataPoints[] = array("label" => $aiUsedLabel, "y" => (float)$row['conversationCount']);
 }
 
