@@ -7,9 +7,9 @@
             <li class="dropdown">
                 <a href="#" class="dropbtn">-CHARTS</a>
                 <div class="dropdown-content">
-                    <a href="includes/charts/charts1.php" target="_blank">1. Charts1</a>
-                    <a href="includes/charts/charts2.php" target="_blank">2. Charts2</a>
-                    <a href="includes/charts/charts3.php" target="_blank">3. Charts3</a>
+                    <a href="includes/charts/charts1.php">1. Charts1</a>
+                    <a href="includes/charts/charts2.php">2. Charts2</a>
+                    <a href="includes/charts/charts3.php">3. Charts3</a>
                 </div>
             </li>
             <li><a href="updates.view.php">Updates</a></li>
