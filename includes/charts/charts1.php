@@ -36,7 +36,7 @@ foreach ($resultSet as $row) {
 </head>
 <body>
     <div class="content">
-        <h2>Contributions by Employee ID</h2>
+        <h2>Contributions To The Conversations Table</h2>
 
         <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 
@@ -46,7 +46,7 @@ foreach ($resultSet as $row) {
                     animationEnabled: true,
                     exportEnabled: true,
                     title:{
-                        text: "Contributions by Employee ID"
+                        text: "Employee Contributors"
                     },
                     data: [{
                         type: "pie",
