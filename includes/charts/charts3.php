@@ -172,16 +172,15 @@ if ($openCountResult) {
 </head>
 <body>
     <!-- Include the header -->
-    <?php include('../../header.html'); ?>
+    <!-- <?php include('../../header.html'); ?> -->
     <div class="content">
         <div id="chartContainer" style="height: 370px; width: 100%;"></div>
         <button class="btn invisible" id="backButton">&lt; Back</button>
         <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
         <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     </div>
-    <?php include('../../navbar.php'); ?>
     <div class="content"></div>
     <!-- Include the footer -->
-    <?php include('../../footer.html'); ?>
+    <!-- <?php include('../../footer.html'); ?> -->
 </body>
 </html>

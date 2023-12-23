@@ -5,54 +5,20 @@ include_once("../../conversations.php");
 $db = new Database();
 $connection = $db->getConnection();
 $conversations = new Conversations($db);
+// start here Mav
 
-
-
-
- 
-$totalVisitors = 883000;
- 
-$newVsReturningVisitorsDataPoints = array(
-	array("y"=> 519960, "name"=> "New Visitors", "color"=> "#E7823A"),
-	array("y"=> 363040, "name"=> "Returning Visitors", "color"=> "#546BC1")
+$dataPoints = array(
+	array("label"=> "Food + Drinks", "y"=> 590),
+	array("label"=> "Activities and Entertainments", "y"=> 261),
+	array("label"=> "Health and Fitness", "y"=> 158),
+	array("label"=> "Shopping & Misc", "y"=> 72),
+	array("label"=> "Transportation", "y"=> 191),
+	array("label"=> "Rent", "y"=> 573),
+	array("label"=> "Travel Insurance", "y"=> 126)
 );
- 
-$newVisitorsDataPoints = array(
-	array("x"=> 1420050600000 , "y"=> 33000),
-	array("x"=> 1422729000000 , "y"=> 35960),
-	array("x"=> 1425148200000 , "y"=> 42160),
-	array("x"=> 1427826600000 , "y"=> 42240),
-	array("x"=> 1430418600000 , "y"=> 43200),
-	array("x"=> 1433097000000 , "y"=> 40600),
-	array("x"=> 1435689000000 , "y"=> 42560),
-	array("x"=> 1438367400000 , "y"=> 44280),
-	array("x"=> 1441045800000 , "y"=> 44800),
-	array("x"=> 1443637800000 , "y"=> 48720),
-	array("x"=> 1446316200000 , "y"=> 50840),
-	array("x"=> 1448908200000 , "y"=> 51600)
-);
- 
-$returningVisitorsDataPoints = array(
-	array("x"=> 1420050600000 , "y"=> 22000),
-	array("x"=> 1422729000000 , "y"=> 26040),
-	array("x"=> 1425148200000 , "y"=> 25840),
-	array("x"=> 1427826600000 , "y"=> 23760),
-	array("x"=> 1430418600000 , "y"=> 28800),
-	array("x"=> 1433097000000 , "y"=> 29400),
-	array("x"=> 1435689000000 , "y"=> 33440),
-	array("x"=> 1438367400000 , "y"=> 37720),
-	array("x"=> 1441045800000 , "y"=> 35200),
-	array("x"=> 1443637800000 , "y"=> 35280),
-	array("x"=> 1446316200000 , "y"=> 31160),
-	array("x"=> 1448908200000 , "y"=> 34400)
-);
- 
 
 
-
-
-
-
+//End here
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,153 +35,51 @@ $returningVisitorsDataPoints = array(
             text-align: center;
         }
     </style>
-
-
-
-
-
-<script>
-window.onload = function () {
- 
-var totalVisitors = <?php echo $totalVisitors ?>;
-var visitorsData = {
-	"New vs Returning Visitors": [{
-		click: visitorsChartDrilldownHandler,
-		cursor: "pointer",
-		explodeOnClick: false,
-		innerRadius: "75%",
-		legendMarkerType: "square",
-		name: "New vs Returning Visitors",
-		radius: "100%",
-		showInLegend: true,
-		startAngle: 90,
-		type: "doughnut",
-		dataPoints: <?php echo json_encode($newVsReturningVisitorsDataPoints, JSON_NUMERIC_CHECK); ?>
-	}],
-	"New Visitors": [{
-		color: "#E7823A",
-		name: "New Visitors",
-		type: "column",
-		xValueType: "dateTime",
-		dataPoints: <?php echo json_encode($newVisitorsDataPoints, JSON_NUMERIC_CHECK); ?>
-	}],
-	"Returning Visitors": [{
-		color: "#546BC1",
-		name: "Returning Visitors",
-		type: "column",
-		xValueType: "dateTime",
-		dataPoints: <?php echo json_encode($returningVisitorsDataPoints, JSON_NUMERIC_CHECK); ?>
-	}]
-};
- 
-var newVSReturningVisitorsOptions = {
-	animationEnabled: true,
-	theme: "light2",
-	title: {
-		text: "New VS Returning Visitors"
-	},
-	subtitles: [{
-		text: "Click on Any Segment to Drilldown",
-		backgroundColor: "#2eacd1",
-		fontSize: 16,
-		fontColor: "white",
-		padding: 5
-	}],
-	legend: {
-		fontFamily: "calibri",
-		fontSize: 14,
-		itemTextFormatter: function (e) {
-			return e.dataPoint.name + ": " + Math.round(e.dataPoint.y / totalVisitors * 100) + "%";  
-		}
-	},
-	data: []
-};
- 
-var visitorsDrilldownedChartOptions = {
-	animationEnabled: true,
-	theme: "light2",
-	axisX: {
-		labelFontColor: "#717171",
-		lineColor: "#a2a2a2",
-		tickColor: "#a2a2a2"
-	},
-	axisY: {
-		gridThickness: 0,
-		includeZero: false,
-		labelFontColor: "#717171",
-		lineColor: "#a2a2a2",
-		tickColor: "#a2a2a2",
-		lineThickness: 1
-	},
-	data: []
-};
- 
-var chart = new CanvasJS.Chart("chartContainer", newVSReturningVisitorsOptions);
-chart.options.data = visitorsData["New vs Returning Visitors"];
-chart.render();
- 
-function visitorsChartDrilldownHandler(e) {
-	chart = new CanvasJS.Chart("chartContainer", visitorsDrilldownedChartOptions);
-	chart.options.data = visitorsData[e.dataPoint.name];
-	chart.options.title = { text: e.dataPoint.name }
-	chart.render();
-	$("#backButton").toggleClass("invisible");
-}
- 
-$("#backButton").click(function() { 
-	$(this).toggleClass("invisible");
-	chart = new CanvasJS.Chart("chartContainer", newVSReturningVisitorsOptions);
-	chart.options.data = visitorsData["New vs Returning Visitors"];
-	chart.render();
-});
- 
-}
-</script>
-<style>
-  #backButton {
-	border-radius: 4px;
-	padding: 8px;
-	border: none;
-	font-size: 16px;
-	background-color: #2eacd1;
-	color: white;
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	cursor: pointer;
-  }
-  .invisible {
-    display: none;
-  }
-</style>
-
-
-
+    <!-- start here -->
+    <script>
+    window.onload = function () {
+    
+    var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        exportEnabled: true,
+        title:{
+            text: "Average Expense Per Day  in Thai Baht"
+        },
+        subtitles: [{
+            text: "Currency Used: Thai Baht (฿)"
+        }],
+        data: [{
+            type: "pie",
+            showInLegend: "true",
+            legendText: "{label}",
+            indexLabelFontSize: 16,
+            indexLabel: "{label} - #percent%",
+            yValueFormatString: "฿#,##0",
+            dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+        }]
+    });
+    chart.render();
+    
+    }
+    </script>
+    <!-- end here -->
 </head>
 <body>
     <!-- Include the header -->
-    <?php include('../../header.html'); ?>
+    <!-- <?php include('../../header.html'); ?> -->
     <div class="content">
-        
-    
-
-    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-<button class="btn invisible" id="backButton">&lt; Back</button>
-<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-
-
-
-
-
+        <!-- start here -->
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+        <!-- end here -->
     </div>
-    <?php include('../../navbar.php'); ?>
+
 
 
 <div class="content">
 </div>
 
         <!-- Include the footer -->
-    <?php include('../../footer.html'); ?>
+    <!-- <?php include('../../footer.html'); ?> -->
 </body>
 </html>
