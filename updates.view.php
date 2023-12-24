@@ -51,7 +51,7 @@ $updates = new Updates($db);
                 
                 <td><?php echo $result['id']; ?></td>
                 <td><?php echo $result['conversation_id']; ?></td>
-                <td><?php echo $result['updated_by']; ?></td>
+                <td><?php echo $result['Updated By']; ?></td>
                 <td><?php echo $result['updated_on']; ?></td>
                 <td><?php echo $result['updates_implemented']; ?></td>
                 <td>

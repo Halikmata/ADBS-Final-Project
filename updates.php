@@ -120,8 +120,11 @@ class Updates {
     // }
     public function displayPage($startIndex, $resultsPerPage) {
         try {
-            $sql = "SELECT * FROM conversations_updates
-                    ORDER BY id ASC 
+            $sql = "SELECT u.id, u.conversation_id, concat(e.first_name, ' ', e.last_name) AS 'Updated By', updated_on, updates_implemented
+                    FROM conversations_updates u
+                    INNER JOIN employees e
+                    ON u.updated_by = e.idemployees
+                    ORDER BY id ASC
                     LIMIT :startIndex, :resultsPerPage";
     
             $stmt = $this->db->getConnection()->prepare($sql);
