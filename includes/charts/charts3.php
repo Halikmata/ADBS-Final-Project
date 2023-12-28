@@ -174,6 +174,7 @@ if ($openCountResult) {
     <!-- Include the header -->
     <!-- <?php include('../../header.html'); ?> -->
     <div class="content">
+        <h1 id="pageTitle">Conversation Statistics by Access Level</h1>
         <div id="chartContainer" style="height: 370px; width: 100%;"></div>
         <button class="btn invisible" id="backButton">&lt; Back</button>
         <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>

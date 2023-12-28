@@ -52,7 +52,7 @@ function getAiUsedLabel($aiUsedValue) {
 </head>
 <body>
     <div class="content">
-        <h2>Distribution of Conversations across AI</h2>
+        <h1>Distribution of Conversations across AI</h1>
 
         <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 

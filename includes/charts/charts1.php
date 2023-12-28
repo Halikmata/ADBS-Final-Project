@@ -36,7 +36,7 @@ foreach ($resultSet as $row) {
 </head>
 <body>
     <div class="content">
-        <h2>Contributions To The Conversations Table</h2>
+        <h1>Contributions made to the Conversations Table</h1>
 
         <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 
