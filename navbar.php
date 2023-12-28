@@ -2,7 +2,6 @@
         <br><br><br><br><br><br><br>
         <h1>Menu</h1>
         <ul>
-            <li><a href="/">Home</a></li>
             <li><a href="conversations.view.php">Conversations</a></li>
             <!-- <li class="dropdown">
                 <a href="#" class="dropbtn">-CHARTS</a>
@@ -22,5 +21,7 @@
                     <a href="https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx" target="_blank">4. Bing AI</a>
                 </div>
             </li>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <li><a href="/">Log out</a></li>
         </ul>
 </div>
