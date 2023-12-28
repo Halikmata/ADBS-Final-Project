@@ -59,7 +59,7 @@ CREATE TABLE `ai_conversations` (
   KEY `'fk_ai_conversations_artificial_intelligence_used'_idx` (`ai_used`),
   CONSTRAINT `'fk_ai_conversations_artificial_intelligence_used'` FOREIGN KEY (`ai_used`) REFERENCES `artificial_intelligence_used` (`id`),
   CONSTRAINT `'fk_ai_conversations_employees'` FOREIGN KEY (`created_by`) REFERENCES `employees` (`idemployees`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +68,7 @@ CREATE TABLE `ai_conversations` (
 
 LOCK TABLES `ai_conversations` WRITE;
 /*!40000 ALTER TABLE `ai_conversations` DISABLE KEYS */;
-INSERT INTO `ai_conversations` VALUES (1,1,'How to cook pouched egg',1,1,'2023-12-10 00:00:00','A convo where GPT teaches you the step by step process of cooking a pouched egg.'),(2,3,'BOT: QuillBOT',2,1,'2023-12-15 00:00:00','A custom quillbot.'),(3,1,'BOT: movie review',2,202180383,'2023-12-16 01:15:36','A bot that takes a movie title input and reviews it based on the criteria predetermined by the admin.'),(6,2,'try',2,3,'2023-12-16 17:39:17','asd'),(7,1,'Private convo',3,202180383,'2023-12-17 03:49:21','try private convo');
+INSERT INTO `ai_conversations` VALUES (1,1,'How to cook pouched egg',1,1,'2023-12-10 00:00:00','A convo where GPT teaches you the step by step process of cooking a pouched egg.'),(2,3,'BOT: QuillBOT',2,2,'2023-12-15 00:00:00','A custom quillbot.'),(3,1,'BOT: movie review',2,202180383,'2023-12-16 01:15:36','A bot that takes a movie title input and reviews it based on the criteria predetermined by the admin.'),(4,2,'ASK: Windows',2,3,'2023-12-16 17:39:17','A conversation where employees can ask about common software problems on windows computers.'),(5,1,'How to respectfully fire a friend',3,202180383,'2023-12-17 03:49:21','A guide into how one can fire a friend from work while avoiding possible confklicts'),(6,4,'ASK: Philosopy',3,50,'2023-12-19 00:00:00','Conversation about philosopical topics.'),(7,3,'BOT: Paraphraser',3,18098,'2023-12-19 00:00:00','A bot that takes a text input and paraphrases it.'),(8,1,'How to fix a stapler',1,99,'2023-12-20 00:00:00','A guide on how to fix a broken stapler spring.'),(9,1,'How to fix jammed orinter',1,202180383,'2023-12-20 00:00:00','Fixing a jammed printer, sir papalitan na po.'),(10,1,'What is the safe level of caffeine?',2,5,'2023-12-21 00:00:00','A guide for our coffee loving workmates.'),(11,2,'How to increase type speed',1,21,'2023-12-22 00:00:00','Increase typing speed to increase work done.'),(12,4,'How to increase productivity',1,123,'2023-12-22 00:00:00','Self improvement guide as an employee.'),(13,1,'Journals for Human Resource Management',1,5156,'2023-12-22 00:00:00','Academic and theoretical basis of the proferssion.'),(14,3,'ASK: Quantum Physics/Mechanics',1,202180383,'2023-12-23 00:00:00','A conversation for questions about the cosmos.'),(15,2,'ASK: New HRM project',3,202180383,'2023-12-23 00:00:00','A pitch for a new project (improvements)'),(16,1,'ASK: Employee Mental Health',2,202180383,'2023-12-24 00:00:00','Asking about new ways to safeguard employee mental health.'),(52,1,'Meeting Summary',2,202180383,'2023-12-24 18:33:07','Summarizes the meeting into a comprehensive document');
 /*!40000 ALTER TABLE `ai_conversations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -176,7 +176,7 @@ CREATE TABLE `conversations_updates` (
 
 LOCK TABLES `conversations_updates` WRITE;
 /*!40000 ALTER TABLE `conversations_updates` DISABLE KEYS */;
-INSERT INTO `conversations_updates` VALUES (1,1,202180383,'2023-12-16 00:00:00','thanked GPT'),(2,2,1,'2023-12-16 00:00:00','asked about the meaning of life'),(3,3,2,'2023-12-16 00:00:00','ewan'),(4,3,5,'2023-12-16 00:00:00','inquired about life insurance'),(5,3,69,'2023-12-16 00:00:00','a'),(6,1,202180383,'2023-12-16 00:00:00','v'),(7,2,1,'2023-12-16 00:00:00','asked about NLP'),(8,2,2,'2023-12-16 00:00:00','aked for some inspirational quotes'),(9,1,1,'2023-12-16 00:00:00','a'),(10,1,10,'2023-12-16 00:00:00','a'),(11,1,202180383,'2023-12-17 02:30:14','Asked about code bugs and glitches');
+INSERT INTO `conversations_updates` VALUES (1,1,202180383,'2023-12-16 00:00:00','thanked GPT'),(2,2,1,'2023-12-16 00:00:00','asked about the meaning of life'),(3,3,2,'2023-12-16 00:00:00','Fixed some input errors'),(4,3,5,'2023-12-16 00:00:00','inquired about life insurance'),(5,3,69,'2023-12-16 00:00:00','removed unnecessary logs'),(6,1,202180383,'2023-12-16 00:00:00','removed unrelated logs'),(7,2,1,'2023-12-16 00:00:00','asked about NLP'),(8,2,2,'2023-12-16 00:00:00','aked for some inspirational quotes'),(9,1,1,'2023-12-16 00:00:00','pruned the conversation'),(11,1,202180383,'2023-12-17 02:30:14','Asked about code bugs and glitches');
 /*!40000 ALTER TABLE `conversations_updates` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -858,6 +858,34 @@ INSERT INTO `trainings` VALUES (0,'City Coliseum','Ethical Hacking and Penetrati
 UNLOCK TABLES;
 
 --
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `idusers` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `idemployees` int NOT NULL,
+  PRIMARY KEY (`idusers`),
+  KEY `fk_users_employees_idx` (`idemployees`),
+  CONSTRAINT `fk_users_employees` FOREIGN KEY (`idemployees`) REFERENCES `employees` (`idemployees`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'maverick','jhayzkeller9122',202180383),(2,'vince','123456',29),(3,'arvinclark','123456',202180012);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `venues`
 --
 
@@ -892,4 +920,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-18  2:24:20
+-- Dump completed on 2023-12-29  3:27:25
