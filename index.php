@@ -43,7 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signup'])) {
 
     // You should validate and sanitize user input before using it in a query to prevent SQL injection
 
-    $query = "INSERT INTO mydb.users (username, password, idemployees) VALUES (:username, :password, :employeeId)";
+    $query = "INSERT INTO mydb.users (username, password, idemployees) 
+              VALUES (:username, :password, :employeeId)";
     $stmt = $connection->prepare($query);
     $stmt->bindParam(":username", $username);
     $stmt->bindParam(":password", $password);
