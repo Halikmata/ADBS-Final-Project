@@ -36,13 +36,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php include('navbar.php'); ?>
 
     <div class="content">
-        <h2>Life made easier</h2>
+        <h2>Our Conversations</h2>
         <a class="button-link" href="conversations_add.php">Add Convo</a>
 
         <div style="float: right; margin-right: 10px;">
             <li class="dropdown">
                     <a href="#" class="button-link">CHARTS</a>
-                    <div class="dropdown-content">
+                    <div class="dropdown-content" style="background-color: #f1f1f1">
                         <a href="includes/charts/charts1.php" target="_blank">1. Charts1</a>
                         <a href="includes/charts/charts2.php" target="_blank">2. Charts2</a>
                         <a href="includes/charts/charts3.php" target="_blank">3. Charts3</a>
@@ -122,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </script>
 
         <!-- Form to enter password -->
-        <form method="post" style="background-color: #34a853; padding: 40px; box-shadow: 0 0 0px rgba(0, 0, 0, 0.1); width: 500px; border: none;">
+        <form method="post" style="background-color: #f1f1f1; padding: 40px; box-shadow: 0 0 0px rgba(0, 0, 0, 0.1); width: 500px; border: none;">
             <!-- <label for="password">Password:</label> -->
             <label for="toggleVisibility" style="color: white">Password:</label>
             <input type="password" id="password" name="password" required>

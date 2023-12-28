@@ -1,8 +1,8 @@
 .sidebar {
     position: fixed;
-    width: 250px;
+    width: 170px;
     height: 95%;
-    background-color: #D8F3DC; /* Background color using the provided hex code */
+    background-color: #0f0f13; /* Background color using the provided hex code */
     color: #74C69D; /* Text color using the provided hex code */
     padding: 20px;
     top: 0;
@@ -41,7 +41,11 @@
 /* Body */
 body {
     font-family: Arial, sans-serif;
-    background-color: #34a853; /* Background color using the provided hex code */
+    /* background-image: url('bg_image.jpg'); */
+    background-color: #f1f1f1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #333; /* Text color */
     margin: 0;
     padding: 0;
@@ -54,7 +58,7 @@ h1 {
 
 h2 {
     font-size: 72px;
-    color: #181a19; /* Header color using the provided hex code */
+    color: #74C69D; /* Header color using the provided hex code */
 }
 
 /* Style for the dropdown menu */
@@ -72,7 +76,7 @@ h2 {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #D8F3DC; /* Background color for the dropdown using the provided hex code */
+    background-color: #0f0f13; /* Background color for the dropdown using the provided hex code */
     min-width: 160px;
     z-index: 1;
 }
@@ -110,8 +114,8 @@ th {
 
 /* Forms */
 form {
-    background-color: #D8F3DC; /* Form background color using the provided hex code */
-    border: 1px solid #95D5B2; /* Form border color using the provided hex code */
+    background-color: #454845; /* Form background color using the provided hex code */
+    border: 1px solid #454845; /* Form border color using the provided hex code */
     padding: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 500px;
@@ -122,7 +126,7 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* 100% of the viewport height */
+    height: 80vh; /* 100% of the viewport height */
 }
 
 .centered-form label {
@@ -160,8 +164,8 @@ input[type="submit"]:hover {
 
 /* Header */
 header {
-    background-color: #D8F3DC;
-    color: #fff;
+    background-color: #0f0f13;
+    color: #fbfff4;
     padding: 20px 0;
     text-align: center;
 }
@@ -186,7 +190,7 @@ header {
 .button-link {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #74C69D;  /*Button background color */
+    background-color: #454845;  /*Button background color */
     color: #fff; /* Button text color */
     text-decoration: none;
     border: none;
@@ -201,7 +205,7 @@ header {
 
 /* Footer */
 footer {
-    background-color: #D8F3DC;
+    background-color: #0f0f13;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -234,8 +238,8 @@ footer {
 }
 #chartContainer {
     
-    /* float: right;
-    width: 81%; */
+    float: left;
+    /*width: 81%; */
     width: 80%;
       max-width: 700px;
       margin: 20px auto;
